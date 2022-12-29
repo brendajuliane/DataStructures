@@ -42,7 +42,7 @@ void enqueue(Queue * q, int value) {
 
 int dequeue(Queue * q) {
     if(isEmpty(q)) 
-        return;
+        exit(2);
     
     Node * n = q->front;
     int value = n->value;
