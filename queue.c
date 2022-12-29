@@ -40,11 +40,12 @@ void enqueue(Queue * q, int value) {
     }
 }
 
-void dequeue(Queue * q) {
+int dequeue(Queue * q) {
     if(isEmpty(q)) 
         return;
     
     Node * n = q->front;
+    int value = n->value;
     if(q->front == q->rear) {
         q->front = NULL;
         q->rear = NULL;
@@ -52,6 +53,7 @@ void dequeue(Queue * q) {
         q->front = q->front->next;
     }
     free(n);
+    return value;
 }
 
 int size(Queue * q) {
